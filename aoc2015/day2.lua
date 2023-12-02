@@ -19,4 +19,5 @@ for num in string.gmatch(file, "%x+") do
 	end
 end
 
+print(wrapping)
 print(ribbon)
