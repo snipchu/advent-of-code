@@ -1,5 +1,5 @@
 import re
-txt = open(r"C:\Users\do556325\Documents\coding\PythonFun\2022\advent of code\day4.txt", "r")
+txt = open(r"./day4.txt", "r")
 count = 0
 
 for line in txt:

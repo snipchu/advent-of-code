@@ -1,4 +1,4 @@
-file2 = open(r"C:\Users\do556325\Documents\coding\PythonFun\2022\day2.txt", "r")
+file2 = open(r"./day2.txt", "r")
 score = 0
 for line in file2:
     line = line.split()

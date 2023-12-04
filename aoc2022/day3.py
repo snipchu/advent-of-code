@@ -1,4 +1,4 @@
-file = open(r"C:\Users\do556325\Documents\coding\PythonFun\2022\advent of code\day3.txt", "r")
+file = open(r"./day3.txt", "r")
 sum = 0
 counter = 1
 

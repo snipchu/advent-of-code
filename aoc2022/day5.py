@@ -1,5 +1,5 @@
 
-txt = open(r"C:\Users\do556325\Documents\coding\PythonFun\2022\advent of code\day5.txt", "r")
+txt = open(r"./day5.txt", "r")
 
 # Hell
 list1 = ["H","R","B","D","Z","F","L","S"]
