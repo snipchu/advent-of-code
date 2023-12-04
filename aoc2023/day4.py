@@ -1,24 +1,29 @@
 import re
 file = open("./day4.txt", "r").read().splitlines()
-total = 0
-for line in file:
-    points = 0
-    result = re.split(": | \| ", line)
-    result.pop(0)
-    winninglist = re.split(" ", result[0])
-    mylist = re.split(" ", result[1])
-    print(mylist)
+copies = []
+modifiedfile = []
+
+for line in range(len(file)):
+    scratchcards = 0
+
+    result = re.split(": | \| ", file[line])
+    result[0] = int(result[0][5:])
+    winninglist = re.split(" ", result[1])
     winninglist = [i for i in winninglist if i]
-    mylist = [i for i in test_list if i]
+    mylist = re.split(" ", result[2])
+    mylist = [i for i in mylist if i]
+
     for i in range(len(mylist)):
-        if points==0 and mylist[i] in winninglist:
-            points=1
-            print(f"first: {mylist[i]}")
-        elif points>0 and mylist[i] in winninglist:
-            points= points*2
-            print(f"new: {mylist[i]}")
+        if mylist[i] in winninglist:
+            scratchcards+=1
 
-    print(points)
-    total += points
+    copies.append(scratchcards)
+    modifiedfile.append(result)
 
-print(total)
+for i in range(len(copies)):
+    for ii in range(1,copies[i]+1):
+        for iii in range(modifiedfile.count(modifiedfile[i])):
+            modifiedfile.append(modifiedfile[i+ii])
+
+modifiedfile.sort()
+print(len(modifiedfile))
