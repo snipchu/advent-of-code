@@ -20,7 +20,7 @@ for line in range(len(file)):
     archive.reverse()
 
     for line in range(1,len(archive)):
-        archive[line].append(archive[line][-1]+archive[line-1][-1])
-    sum += archive[-1][-1]
-
+        archive[line].insert(0,archive[line][0]-archive[line-1][0])
+        #archive[line].append(archive[line][-1]+archive[line-1][-1])
+    sum += archive[-1][0]
 print(sum)
