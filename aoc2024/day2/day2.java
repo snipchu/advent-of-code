@@ -20,14 +20,18 @@ public class day2 {
     int count2 = 0;
     while (scan.hasNextLine()) {
       boolean safe=true;
+      int dampen = 0;
       String[] input = scan.nextLine().split(" ");
       for (String i:input) { c.add(Integer.valueOf(i)); }
       if (!c.equals(sort(c)) && !c.equals(reverse(sort(c)))) {
         safe=false;
       }
+      System.out.println(c);
       for (int i=1; i<c.size(); i++) {
         if (Math.abs(c.get(i)-c.get(i-1)) > 3 || c.get(i)==c.get(i-1)) {
           safe = false;
+          dampen++;
+          System.out.println(dampen);
         }
       }
       if (safe) {count++;}
